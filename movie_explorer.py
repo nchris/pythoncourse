@@ -33,6 +33,7 @@ def durations(x):
         return "Less than two hours"
     else:
         return "Any"
+    
 st.sidebar.subheader("Duration")    
 duration = st.sidebar.radio(
     "Select movie duration",
@@ -56,7 +57,6 @@ years = st.sidebar.slider(
      )
 
 st.sidebar.subheader("Rating")
-
 min_rating = st.sidebar.slider(
  'Select the minimum rating',
     min_value=float(movies['averageRating'].min()),
@@ -83,6 +83,5 @@ def filtered_results(data=movies, duration=duration, genres=genres, years=years,
 
 result = filtered_results()
 st.write("### Filtered Results ("+str(result.shape[0])+")")  
-
 st.write(result.to_html(escape=False, index=False), unsafe_allow_html=True) 
  
