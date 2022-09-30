@@ -1,7 +1,6 @@
 import pandas as pd
 import numpy as np
 import streamlit as st
-import plotly.express as px
 
 st.set_page_config(
     page_title="Movie Explorer App",
@@ -84,17 +83,5 @@ def filtered_results(data=movies, duration=duration, genres=genres, years=years,
 result = filtered_results()
 st.write("### Filtered Results ("+str(result.shape[0])+")")  
 
-# def format_int(x):
-#     return "{:,.0f}".format(x)     
-# result = result.to_html(formatters={"numVotes": format_int}, escape=False, index=False)
-# # or
-# result = result.to_html(formatters={"numVotes": lambda x:"{:,.0f}".format(x)}, escape=False, index=False)
-
-st.write(result.to_html(escape=False, index=False), unsafe_allow_html=True)
-
-
-fig = px.bar(result, x='primaryTitle', y='numVotes')
-# , color_discrete_sequence=['green']*len(result)
-fig.layout.update(showlegend=False)
-st.plotly_chart(fig, use_container_width=True)    
+st.write(result.to_html(escape=False, index=False), unsafe_allow_html=True) 
  
