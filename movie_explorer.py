@@ -6,12 +6,7 @@ st.set_page_config(
     page_title="Movie Explorer App",
     page_icon=":cinema:",
     layout="wide",  # (Default:"centered" or "wide")
-    initial_sidebar_state="expanded", # (D:"auto"[ie responsive] or "expanded" or "collapsed")
-    menu_items={
-        'Get Help': 'https://www.example.com/help',
-        'Report a bug': "https://www.example.com/bug",
-        'About': "## This is a demo app for *ATHEX*!"
-    }       
+    initial_sidebar_state="expanded"    
 )
 
 @st.cache
